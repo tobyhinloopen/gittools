@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 puts `git checkout master`
+puts `git pull`
 
 issue_id = ARGV[0]
 title = issue_id + " " + `gh issue view #{issue_id} | head -n 1`
