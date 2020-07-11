@@ -9,3 +9,4 @@ branch_name = title.downcase.gsub(/[^a-z0-9]+/i, "-").gsub(/^-|-$/, "")[0...60]
 
 puts `git checkout -b "#{branch_name}"`
 puts `git push`
+puts `git branch --set-upstream-to origin/#{branch_name} #{branch_name}`
