@@ -3,8 +3,8 @@
 require 'json'
 
 def try_foreman
-  return "bundle exec foreman start -f Procfile.dev" if File.exists? "Procfile.dev"
-  return "bundle exec foreman start -f Procfile" if File.exists? "Procfile"
+  return "bundle exec foreman start -f Procfile.dev" if File.exists?("Procfile.dev") && `cat Procfile.dev | grep 'web'` != ""
+  return "bundle exec foreman start -f Procfile" if File.exists?("Procfile") && `cat Procfile | grep 'web'` != ""
 end
 
 def try_rails
