@@ -19,4 +19,9 @@ def try_node
   end
 end
 
-puts (try_foreman or try_rails or try_node or 'echo "Failed to detect start command."')
+def try_start_sh
+  "sh start.sh" if File.exists? "start.sh"
+  "bin/start" if File.exists? "bin/start"
+end
+
+puts (try_start_sh or try_foreman or try_rails or try_node or 'echo "Failed to detect start command."')
