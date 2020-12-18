@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-puts `git checkout master`
+puts `git checkout master || git checkout main`
 puts `git pull`
 
 issue_id = ARGV[0]
