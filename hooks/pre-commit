@@ -5,6 +5,8 @@
 if [ -z "$PS1" ]
 then
 
+  exec < /dev/tty
+
   branch="$(git rev-parse --abbrev-ref HEAD)"
   if [ "$branch" = "master" ] || [ "$branch" = "main" ]
   then
@@ -15,6 +17,7 @@ then
       exit 0
     else
       echo "Canceled by user."
+      exit 1
     fi
   fi
 fi
