@@ -1,10 +1,10 @@
 #!/bin/bash
 
-
 # check if we're in an interactive shell
 if [ -z "$PS1" ]
 then
 
+  # Bind to stdio of shell
   exec < /dev/tty
 
   branch="$(git rev-parse --abbrev-ref HEAD)"
