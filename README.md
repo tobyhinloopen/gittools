@@ -16,3 +16,9 @@ eval "$(gh completion --shell zsh)"
 gcb 659 # create branch
 gcpr # create PR (after commit)
 ```
+
+## HOOKS
+
+```
+git config --global core.hooksPath ~/Projects/gittools/hooks/
+```

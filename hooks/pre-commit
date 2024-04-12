@@ -1,0 +1,13 @@
+#!/bin/bash
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "master" ] || [ "$branch" = "main" ]
+then
+  read -p "Really commit to $branch? [yN] "
+  if [[ $REPLY =~ ^[Yy]$ ]]
+    exit 0
+  then
+    echo "Cancelled by user."
+  fi
+fi
