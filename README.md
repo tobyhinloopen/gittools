@@ -4,6 +4,12 @@ PATH="/Users/hinloopen/Projects/Github/gittools/bin:$PATH"
 alias gcb=github-create-branch.rb
 alias gcpr=github-create-pull-request.rb
 alias asb=asdf-bundle.rb
+
+asb() {
+  asdf-bundle.rb
+  bundle
+}
+
 s() { $(start.rb) }
 
 # P alias
